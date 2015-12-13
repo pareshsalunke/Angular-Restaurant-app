@@ -84,6 +84,7 @@
         app.controller('menuController', function() {
         
             this.tab = 1;
+            this.filtText = '';
             
             var dishes=[
                          {
@@ -127,6 +128,16 @@
             
             this.select = function(selectTab) {
                 this.tab = selectTab;
+                
+                if(selectTab === 2) {
+                    this.filtText = "appetizer";
+                } else if(selectTab === 3) {
+                    this.filtText = "mains";
+                } else if(selectTab === 4) {
+                    this.filtText = "dessert";
+                } else {
+                    this.filtText = "";
+                }
             }
             
             this.isSelected = function(checkTab) {
